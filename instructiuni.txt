@@ -1,0 +1,40 @@
+1. Instalare pe wamp
+Intrati in elements/header.php si gasiti blocul decizional <?php
+$local = 0;
+if($local == '1')
+{
+  $base_url = 'http://localhost/workspace/';
+}
+else
+{
+  $base_url = 'http://parsing-adyopo.c9.io/';
+}
+?>
+
+Schimbati din $local=0 in $local=1.
+Mentionez ca daca schimbati numele directorului in care se afla proiectul
+trebuie sa schimbati si calea de acces din wamp (/workspace/)
+
+*Mentiune - Daca il puneti pe live, fie modificati $local = 0 si url-ul din
+<<else>>, fie lasati $local=1 si modificati in <<if>>. Pe cloud9 n-a mers
+din localhost pentru ca e un sass
+
+2. Instalare MySQL:
+Intrati in phpmyadmin (ar trebui sa fie ceva de genul http://localhost/phpmyadmin/
+creati o baza de date c9 si din tabul <<Import>>, navigati la fisierul c9.sql
+-- SAU --
+din folderul C:\wamp\bin\mysql<versiune>\ executati 
+- mysql -u username -p -h localhost DATA-BASE-NAME < data.sql -
+
+3. Eventuale modificari
+	3.1 Parsare si inserare de pe cs.curs.pub.ro
+		Daca vreti sa vedeti cum se parseaza si insereaza cursurile in baza de date, fisierul
+	care se ocupa de aceste functii este cursuri.php
+	3.2 export examene
+		export_semestrul_1.php
+		export_semestrul_2.php
+		export_examene.php (totalul examenelor).
+Daca n-o sa mearga css-ul sau javascriptul pe local, va rog sa puneti <http:> in fisierul header.php 
+si footer.php inaintea adreselor care incep cu dublu slash *//*
+
+Sper ca instructiunile sa fie destul de concise si usor de urmat.
